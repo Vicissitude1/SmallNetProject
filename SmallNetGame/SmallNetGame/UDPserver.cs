@@ -3,42 +3,46 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 
-public class UDPserver
+namespace SmallNetGame
 {
-    private const int listenPort = 11000;
 
-    private static void StartListener()
+    public class UDPserver
     {
-        bool done = false;
+        private const int listenPort = 11000;
 
-        UdpClient listener = new UdpClient(listenPort);
-        IPEndPoint groupEP = new IPEndPoint(IPAddress.Any, listenPort);
-
-        try
+        private static void StartListener()
         {
-            while (!done)
-            {
-                Console.WriteLine("Waiting for broadcast");
-                byte[] bytes = listener.Receive(ref groupEP);
+            bool done = false;
 
-                Console.WriteLine("Received broadcast from {0} :\n {1}\n",
-                    groupEP.ToString(),
-                    Encoding.ASCII.GetString(bytes, 0, bytes.Length));
+            UdpClient listener = new UdpClient(listenPort);
+            IPEndPoint groupEP = new IPEndPoint(IPAddress.Any, listenPort);
+
+            try
+            {
+                while (!done)
+                {
+                    Console.WriteLine("Waiting for broadcast");
+                    byte[] bytes = listener.Receive(ref groupEP);
+
+                    Console.WriteLine("Received broadcast from {0} :\n {1}\n",
+                        groupEP.ToString(),
+                        Encoding.ASCII.GetString(bytes, 0, bytes.Length));
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            finally
+            {
+                listener.Close();
             }
         }
-        catch (Exception e)
-        {
-            Console.WriteLine(e.ToString());
-        }
-        finally
-        {
-            listener.Close();
-        }
-    }
 
-    public static int Main()
-    {
-        StartListener();
-        return 0;
+        public static int Main1()
+        {
+            StartListener();
+            return 0;
+        }
     }
 }
