@@ -23,11 +23,11 @@ namespace SmallNetGame {
         }
 
         private void Host_Click(object sender, EventArgs e) {
-
+            mainForm.SetNewWindow(new Hosting(mainForm));
         }
 
         private void Find_Click(object sender, EventArgs e) {
-
+            mainForm.SetNewWindow(new FindLobby(mainForm));
         }
     }
 }
