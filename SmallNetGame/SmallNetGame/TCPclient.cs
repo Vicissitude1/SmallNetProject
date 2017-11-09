@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Sockets;
 
-namespace myTcpClient
+namespace SmallNetGame
 {
-    class Program
+    class TCPclient
     {
-        static void Main(string[] args)
+        static void Main1(string[] args)
         {
             Connect("127.0.0.1", "Send dette til TcpServeren");
         }
