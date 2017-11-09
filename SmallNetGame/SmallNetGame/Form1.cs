@@ -25,7 +25,7 @@ namespace SmallNetGame {
         }
 
         private void TestServer_Click(object sender, EventArgs e) {
-            selection = new ServerTesting();
+            selection = new PongForm();
             selection.Show();
         }
 
