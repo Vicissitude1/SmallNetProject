@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SmallNetGame {
-    public partial class Servertesting:Form {
-        public Servertesting() {
+    public partial class ServerTesting:Form {
+        public ServerTesting() {
             InitializeComponent();
         }
     }

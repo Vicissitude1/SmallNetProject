@@ -18,11 +18,11 @@ namespace SmallNetGame {
         }
 
         private void TheGame_Click(object sender, EventArgs e) {
-
+            selection = new Login();
         }
 
         private void TestServer_Click(object sender, EventArgs e) {
-
+            selection = new ServerTesting();
         }
 
         private void Form1_Load(object sender, EventArgs e) {
